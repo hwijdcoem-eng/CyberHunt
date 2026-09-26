@@ -11,7 +11,6 @@ interface FeedRow  { id: string; time: string; text: string }
 // This replaces the old in-memory globalCache which died on every cold start.
 // Now 300 concurrent users share a single cached copy in Upstash Redis.
 async function getSharedData(): Promise<{ agents: AgentRow[]; feed: FeedRow[] }> {
-
   // Try Redis first
   if (redis) {
     try {

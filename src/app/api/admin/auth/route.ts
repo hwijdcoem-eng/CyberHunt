@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { SignJWT } from "jose";
 
-const ADMIN_PASSPHRASE = process.env.ADMIN_PASSPHRASE || "TECHALFA_ADMIN_2026";
+const ADMIN_PASSPHRASE = process.env.ADMIN_PASSPHRASE || process.env.ADMIN_SECRET || "HWI2026";
 const secret = new TextEncoder().encode(
   process.env.NEXTAUTH_SECRET || "insecure-fallback-change-in-production"
 );

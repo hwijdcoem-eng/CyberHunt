@@ -136,7 +136,7 @@ export default function DashboardPage() {
     }
 
     fetchDashboardData();
-    const interval = setInterval(fetchDashboardData, 180000); // Every 3 minutes to reduce DB load
+    const interval = setInterval(fetchDashboardData, 30000); // Poll every 30 seconds
     return () => clearInterval(interval);
   }, [selectedMission, data?.team?.startedAt]);
 
@@ -348,6 +348,7 @@ export default function DashboardPage() {
       console.error(err);
     }
   };
+
 
   if (loading || !data) {
     return (
@@ -762,6 +763,8 @@ export default function DashboardPage() {
         </div>
 
       </div>
+
+
 
       {showLevel10Rules && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-4 overflow-y-auto">

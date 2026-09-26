@@ -27,7 +27,7 @@ export async function sendRegistrationEmail(
 
   try {
     await resend.emails.send({
-      from: "CYBERHUNT <noreply@techalfa.in>",
+      from: "CYBERHUNT <noreply@hwijdcoem.in>",
       to,
       subject: `Welcome to CYBERHUNT — Your Team ID: ${teamId}`,
       html: `
@@ -85,7 +85,7 @@ export async function sendRegistrationEmail(
               </div>
             </div>
             <div class="footer">
-              &lt;CYBERHUNT /&gt; &copy; 2026 TechAlfa
+              &lt;CYBERHUNT /&gt; &copy; 2026 HWIJDCOEM
             </div>
           </div>
         </body>

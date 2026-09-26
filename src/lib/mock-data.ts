@@ -67,7 +67,7 @@ export const MOCK_LEVELS = [
       <p>In the world of version control, nothing is ever truly deleted. Every commit, every message, every change is recorded forever.</p>
       <p>A developer working on the CyberHunt project left a message buried deep in the repository's history.</p>
       <div class="challenge-instruction">
-        <strong>Directive:</strong> Visit the @cyberhunt-techalfa GitHub repository. The answer lies in a commit from 2 weeks ago.
+        <strong>Directive:</strong> Visit the @cyberhunt-hwijdcoem GitHub repository. The answer lies in a commit from 2 weeks ago.
       </div>
     </div>`,
     answer_hash: "0926d6ae7b93aa1ffc363db7f27a0dafa9eb91de864b9489f42410556040577a",
@@ -135,7 +135,7 @@ console.log(data.mission);</pre>
     fragment: "T_",
     hint_1: "Both programs are broken. Fix them. But also — read every line of the output carefully.",
     hint_2: "Error messages can carry more than just errors. Decode what you find in Program A's output first.",
-    hint_3: "Two fragments, one URL. TechAlfa has a professional presence online. Combine A then B.",
+    hint_3: "Two fragments, one URL. HWIJDCOEM has a professional presence online. Combine A then B.",
     success_message_html: "<p>ACCESS GRANTED.</p>",
     is_active: true,
   },
@@ -284,7 +284,7 @@ export const MOCK_HINTS: Record<number, { hint_1: string; hint_2: string; hint_3
   2: { hint_1: "Not all 404 pages are mistakes.", hint_2: "Look at the URL bar after the page loads.", hint_3: "The answer is on the final destination page." },
   3: { hint_1: "The latest code is not always where secrets are.", hint_2: "Check the commit history, not the file browser.", hint_3: "Look at commits from 2 weeks ago." },
   4: { hint_1: "Not every line in the log matters.", hint_2: "The rule is hidden in the fragment from Level 3.", hint_3: "Even-numbered lines with a specific prefix." },
-  5: { hint_1: "Both programs are broken. Fix them.", hint_2: "Decode what you find in Program A's output first.", hint_3: "Two fragments, one URL. TechAlfa has a professional presence." },
+  5: { hint_1: "Both programs are broken. Fix them.", hint_2: "Decode what you find in Program A's output first.", hint_3: "Two fragments, one URL. HWIJDCOEM has a professional presence." },
   6: { hint_1: "You need fragments from earlier levels.", hint_2: "Combine fragments from Levels 1-4.", hint_3: "Only one file in the ZIP is real." },
   7: { hint_1: "Every photo remembers more than you see.", hint_2: "Metadata is data about data.", hint_3: "Try EXIF. Comment field. Base64 then ROT13." },
   8: { hint_1: "Not all records are equal.", hint_2: "One key is actually an MD5 hash.", hint_3: "Use an MD5 lookup tool on each key." },

@@ -71,7 +71,7 @@ export default function LandingPage() {
       {/* Header */}
       <header className="flex items-center justify-between px-8 py-6 relative z-10">
         <Link href="/admin/login" className="font-display text-xl font-bold tracking-widest text-accent hover:text-white transition-colors cursor-pointer">
-          <span className="text-white mr-2">O</span>TECHALFA
+          <span className="text-white mr-2">O</span>HWIJDCOEM
         </Link>
         <Link href="/leaderboard" className="text-text2 hover:text-white text-sm tracking-widest uppercase transition-colors">
           Leaderboard
@@ -93,7 +93,7 @@ export default function LandingPage() {
               Operation
             </span>
             <span className="text-5xl md:text-6xl font-bold text-white text-glow-white uppercase leading-none">
-              TechAlfa Vault
+              HWIJDCOEM Vault
             </span>
           </h1>
           
@@ -146,7 +146,7 @@ export default function LandingPage() {
                   value={form.email}
                   onChange={handleChange}
                   required
-                  placeholder="alpha@techalfa.com"
+                  placeholder="agent@hwijdcoem.com"
                   className="w-full bg-surface2/50 border border-border/20 rounded-lg px-4 py-3 text-white placeholder-text3 focus:outline-none focus:border-accent transition-colors font-mono text-sm"
                 />
               </div>

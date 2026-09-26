@@ -5,7 +5,7 @@ import "./globals.css";
 // doesn't pull in internal type declarations.
 export const metadata = {
   title: "Operation Vault | CyberHunt",
-  description: "A cybersecurity CTF event by TechAlfa. 10 levels. 90 minutes. Can you crack the code?",
+  description: "A cybersecurity CTF event by HWIJDCOEM. 10 levels. 90 minutes. Can you crack the code?",
   icons: { icon: "/favicon.ico" },
 };
 

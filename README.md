@@ -1,6 +1,6 @@
-# Operation Blackout: TechAlfa Vault
+# Operation Blackout: HWIJDCOEM Vault
 
-Welcome to the CyberHunt platform for **Operation Blackout**, built by TechAlfa.
+Welcome to the CyberHunt platform for **Operation Blackout**, built by HWIJDCOEM.
 
 ## Setup Instructions
 
@@ -58,7 +58,7 @@ PASS : eDKunpCMfs5QysVo
 login for user : test@example.com
 pass : TEST-ALPHA
 
-FOR ADMIN : TECHALFA_ADMIN_2026
+FOR ADMIN : HWI2026
 
 SAGAR :
 

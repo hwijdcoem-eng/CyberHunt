@@ -23,7 +23,7 @@ export default function RulesPage() {
       
       <header className="flex items-center justify-between px-8 py-6 relative z-10 border-b border-surface2">
         <div className="font-display text-xl font-bold tracking-widest text-accent">
-          <span className="text-white mr-2">O</span>TECHALFA
+          <span className="text-white mr-2">O</span>HWIJDCOEM
         </div>
         <div className="text-text2 tracking-widest text-xs">SECURE ONBOARDING</div>
       </header>
@@ -54,7 +54,7 @@ export default function RulesPage() {
               <span className="text-accent font-bold mt-0.5">02</span>
               <div>
                 <h3 className="text-white font-bold tracking-widest mb-1">Boundary Limits</h3>
-                <p>Clues are scattered across the real internet, including TechAlfa social media pages and GitHub repositories. <span className="text-white">Note:</span> The hidden clues will NEVER explicitly mention the word "TechAlfa".</p>
+                <p>Clues are scattered across the real internet, including HWIJDCOEM social media pages and GitHub repositories. <span className="text-white">Note:</span> The hidden clues will NEVER explicitly mention the word "HWIJDCOEM".</p>
               </div>
             </div>
 
@@ -90,7 +90,7 @@ export default function RulesPage() {
               <span className="text-accent font-bold mt-0.5">05</span>
               <div>
                 <h3 className="text-white font-bold tracking-widest mb-1">Official Communications</h3>
-                <p>Keep the official TechAlfa website handy for potential deep-dives: <Link href="https://techalfa-website-ivory.vercel.app/" target="_blank" className="text-blue hover:text-white transition-colors underline decoration-blue/30 underline-offset-4">techalfa-website-ivory.vercel.app</Link></p>
+                <p>Keep the official HWIJDCOEM website handy for potential deep-dives: <Link href="https://techalfa-website-ivory.vercel.app/" target="_blank" className="text-blue hover:text-white transition-colors underline decoration-blue/30 underline-offset-4">techalfa-website-ivory.vercel.app</Link></p>
               </div>
             </div>
           </div>
