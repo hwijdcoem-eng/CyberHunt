@@ -126,7 +126,9 @@ export default function SubmissionControl({
           <div className="mt-3 flex items-center justify-center gap-1.5 text-amber">
             <AlertTriangle size={12} />
             <span className="font-mono text-[10px] tracking-[1px] uppercase">
-              1 submission per mission — choose carefully
+              {selectedMission === 10
+                ? "2 attempts permitted for Master Key — No image proof required"
+                : "1 submission per mission — Proof upload required"}
             </span>
           </div>
         </>

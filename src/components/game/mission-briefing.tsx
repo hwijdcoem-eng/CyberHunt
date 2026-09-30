@@ -21,11 +21,12 @@ export default function MissionBriefing({
       <div className="font-raj text-[16px] leading-[1.7] text-text font-medium mb-6">
         {desc}
       </div>
-      <div className="mt-4">
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
+      {link && link !== "#" && (
+        <div className="mt-4">
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
           {...(link.startsWith("/") ? { download: true } : {})}
           className="inline-flex items-center gap-2 font-mono text-[13px] text-[#00d4ff] no-underline border-b border-[#00d4ff44] pb-1 tracking-[1px] transition-colors hover:border-[#00d4ff] hover:text-[#00ffff]"
         >
@@ -45,6 +46,7 @@ export default function MissionBriefing({
           {link.startsWith("/") ? "DOWNLOAD CHALLENGE FILE" : link.toUpperCase()}
         </a>
       </div>
+      )}
     </div>
   );
 }

@@ -34,45 +34,49 @@ export async function POST(request: NextRequest) {
       const hint_num = parseInt(hint_num_str.toString(), 10);
       const lvl = parseInt(level_id.toString(), 10);
 
+      if (lvl === 10) {
+        return NextResponse.json({ error: "NO HINTS AVAILABLE FOR THE FINAL CIPHER. CONVERGE ALL 9 RECOVERED FRAGMENTS." }, { status: 400 });
+      }
+
       const { data: team } = await supabase.from("teams").select("*").eq("team_id", user.team_id).single();
       if (!team) return NextResponse.json({ error: "Team not found" }, { status: 404 });
 
        const HINTS: Record<string, Record<string, string>> = {
         "1": {
-          "1": "Explore the repository files. The secret isn't in plain sight on the main page.",
-          "2": "Look closely at the source code comments across the C files."
+          "1": "Not every line in a codebase is compiled into binary. When developers leave notes for the future, the compiler ignores what an observant analyst—or an AI—can uncover.",
+          "2": "The system architecture spans from Alpha to Omega. Look where kernel interfaces and simulated traffic meet: an unreferenced parameter awaits."
         },
         "2": {
-          "1": "Every request receives a response.",
-          "2": "Disable cache, then refresh the page."
+          "1": "Organizations document their mission where professionals connect. The secret is not in recent feeds or banners—investigate the narrative of who they are.",
+          "2": "Analyze the official organization overview and 'About' description. Examine the text carefully or prompt an analytical model to spot any disguised token or unexpected parameter."
         },
         "3": {
-          "1": "A perfect page isn't always a silent one.",
-          "2": "Your browser records more than what it displays."
+          "1": "Not every failure halts the system. Some exceptions are suppressed from the visual viewport and discarded silently into the client execution stream.",
+          "2": "Modern browser runtimes maintain an internal diagnostic log of script failures and exceptions. Examine the developer diagnostics to find where the error payload was caught."
         },
         "4": {
-          "1": "Look beyond the pages made for visitors.",
-          "2": "Some secrets become easier to notice when you Ctrl + A."
+          "1": "Not every section of a platform is designed for marketing. Some documents exist purely to fulfill formal regulatory disclosures, quietly linked where few ever scroll.",
+          "2": "When organizations handle participant data, they must establish binding terms and privacy covenants. Locate where their data governance policy is published and scrutinize the legal clauses."
         },
         "5": {
-          "1": "Compute the four trials systematically. When their solutions are stitched together sequentially, they will form a pathway to a professional network.",
-          "2": "Once you reach the destination, look back at the very beginning of this journey. Find the professional announcement for this exact operation; the secret is buried in its text."
+          "1": "Software is not static; it has a memory. What exists in the latest files is merely the surface—true digital forensics requires traveling backward through the timeline of modifications.",
+          "2": "Every authored commit and delta log preserves the developer's intent. Inspect the project's historical record or prompt an analytical model to review past commit entries for anomalous parameters."
         },
         "6": {
-          "1": "A repository contains more than source files.",
-          "2": "Think about where developers share important milestones with users."
+          "1": "A single extraction only opens the outer shell. Much like a Russian nesting doll, this package is recursive—every decompression reveals yet another archive waiting inside.",
+          "2": "Do not stop when you see another compressed container. Continue peeling away the concentric layers down to the tenth depth, or script an automated decompression routine to reach the innermost key."
         },
         "7": {
-          "1": "Not every cipher replaces letters. Some transform them using mathematics.",
-          "2": "Rows and columns hold the secret. Classical cryptography has used this language for decades."
+          "1": "Many seek the answer within the audio tracks or by dissecting video frames. Do not be deceived by the moving illusion—the true signal is not rendered in pixels, but inscribed in the dispatch description beneath the reel.",
+          "2": "Not every broadcast carries payload weight. Navigate the reel archives, expand the collapsed narrative text ('...more'), and isolate the operative's signature token."
         },
         "8": {
-          "1": "A website often leaves a small souvenir behind after every visit.",
-          "2": "Isolate the target. atob(decodeURIComponent(\"\"))"
+          "1": "Modern web applications cache background telemetry metrics inside the browser's CacheStorage API. Investigate the speed insights storage.",
+          "2": "(async () => {\n  const cache = await caches.open('__vercel_speed_insights');\n  const res = await cache.match('/telemetry/metrics');\n  // Inspect res.text() -> JSON -> atob(metric.val)\n})();"
         },
         "9": {
-          "1": "Not everything disappears after it's loaded. Some traces are kept for another visit.",
-          "2": "(async () => {\n  const cache = await caches.open('__vercel_speed_insights');"
+          "1": "Observation is the hallmark of a true investigator. Browsers optimize speed by serving previously stored responses from cache, which masks newly transmitted origin headers. If your monitor relies on cached data, the server's secret signal stays completely hidden. Force your browser to bypass its local memory cache and listen directly to the live transmission.",
+          "2": "Open Developer Tools (F12) and navigate to the Network tab. In the top settings bar, ensure 'Disable cache' is CHECKED. Reload the endpoint. Inspect each and every network request's Response and Headers tab—specifically looking closely at the Response Headers sent back from the server for the secret Key."
         }
       };
 
@@ -121,8 +125,11 @@ export async function POST(request: NextRequest) {
        const answer = (rawAnswer || "").trim();
        const proofUrl = (rawProofUrl || "").trim();
  
-       if (!answer || !proofUrl) {
-         return NextResponse.json({ error: "Answer and proof are required" }, { status: 400 });
+       if (!answer) {
+         return NextResponse.json({ error: "Answer is required" }, { status: 400 });
+       }
+       if (level_id !== 10 && !proofUrl) {
+         return NextResponse.json({ error: "Proof is required" }, { status: 400 });
        }
  
        const { data: teamData } = await supabase.from("teams").select("*").eq("team_id", user.team_id).single();
@@ -166,7 +173,7 @@ export async function POST(request: NextRequest) {
          team_name: teamData.team_name,
          level_id: level_id,
          answer: answer.toUpperCase().trim(),
-         proof_url: proofUrl,
+          proof_url: level_id === 10 ? (proofUrl || "NO_PROOF_REQUIRED") : proofUrl,
          status: "pending"
        });
 

@@ -31,22 +31,21 @@ interface DashboardData {
 }
 
 const MISSIONS = [
-  { id: 1, title: "Source Discovery", desc: "A classified repository holds more than just code. Some secrets are buried within the source files, waiting for the one who inspects deep into the repository. Recover the hidden key.", link: "https://github.com/kharbikarsagar17-pixel/test.git" },
-  { id: 2, title: "First Response", desc: "Before a webpage is displayed, a conversation takes place. Listen to what arrives first. Recover the hidden fragment.", link: "https://secure-vault-endpoint.vercel.app/" },
-  { id: 3, title: "Unheard Voices", desc: "The page may appear ordinary. But beneath the surface, something is trying to get your attention. Find the next fragment.", link: "https://cyberhunt-2.vercel.app/" },
-  { id: 4, title: "Beyond the Spotlight", desc: "Not every page exists to attract attention. Some exist because they must. Find the hidden fragment.", link: "https://hwijdcoemwebsite.vercel.app/" },
-  { id: 5, title: "THE GAUNTLET", desc: "Four problems. Four answers. Individually meaningless. Together they reveal the next destination.", link: "/debug_challenge.pdf" },
-  { id: 6, title: "Beyond the Code", desc: "Not every secret is committed to the codebase. Some are preserved as achievements. Recover the hidden fragment.", link: "https://github.com/kharbikarsagar17-pixel/testrepo.git" },
+  { id: 1, title: "THE SILENT ANOMALY", desc: "A classified architecture has been preserved across modular Greek components. Hidden deep within its structural definitions lies an uncompiled secret. Deduce where developers left their silent mark.", link: "https://github.com/kharbikarsagar17-pixel/test.git" },
+  { id: 2, title: "THE CORPORATE FOOTPRINT", desc: "Every organization establishes a public footprint where it connects with the professional world. An undercover operative has embedded an intelligence fragment within the collective's official profile. Trace their corporate presence and uncover the hidden cipher.", link: "https://www.linkedin.com/company/hackwithindia-jdcoem" },
+  { id: 3, title: "SILENT EXCEPTION", desc: "The interface renders seamlessly, projecting an illusion of stability. Yet beneath the polished veneer, an intentional glitch fails in the background. Intercept what the runtime engine reports behind the scenes to capture the cipher.", link: "https://cyberhunt-2.vercel.app/" },
+  { id: 4, title: "THE FINE PRINT", desc: "Most visitors only admire what shines on the main stage. But skilled investigators look where nobody reads—the mandatory legal covenants and compliance protocols buried in the margins. Infiltrate the official HWIJDCOEM portal and inspect their formal disclosures to extract the cipher.", link: "https://hwijdcoemwebsite.vercel.app/" },
+  { id: 5, title: "CHRONICLES OF CHANGE", desc: "The current snapshot of a codebase only reveals the present. But version control preserves every revision, past decision, and historical milestone ever authored. Trace the repository's timeline backward through time to recover what was committed in the shadows.", link: "https://github.com/kharbikarsagar17-pixel/test.git" },
+  { id: 6, title: "THE RECURSIVE VAULT", desc: "Authenticate into the secure terminal to retrieve a compressed intelligence archive. The architects did not protect this secret behind a single gate—they buried it beneath concentric shells of compression. Strip away the nested layers until you reach the core payload.", link: "https://cyberhunt-2.vercel.app/" },
   {
     id: 7,
-    title: "THE FORGOTTEN KEY",
-    desc: "I speak without words. I change without shifting. Four silent guardians decide my fate. Find the rule they obey, and I shall reveal my secret.\n\nEncrypted Payload: \nQOSKAY",
-    link: "https://github.com/ayush21-r/core-utils.git",
-    encrypted: "QOSKAY"
+    title: "THE MOVING ILLUSION",
+    desc: "Not all transmissions are written in cold static code. Some are broadcast through dynamic visual streams and transient media loops. An operative has slipped an encoded credential into the narrative of a broadcast reel. Infiltrate the collective's visual frequency and unveil the transmission.",
+    link: "https://www.instagram.com/hwi_jdcoem/"
   },
-  { id: 8, title: "Sweet Secrets", desc: "Some visitors leave empty-handed. Others know that every visit leaves something behind. Recover the next fragment.", link: "https://mission-indol.vercel.app/" },
-  { id: 9, title: "The Forgotten Echo", desc: "Every visit leaves behind more than memories. What the page forgets, the browser may still preserve. Recover the final fragment.", link: "https://secure-vault-endpoint.vercel.app/" },
-  { id: 10, title: "LAST CIPHER", desc: "Nine fragments. Nine pieces of evidence. None reveal the truth alone. Arrange them correctly. The Master Key has always been in your hands.", link: "#" },
+  { id: 8, title: "THE GHOST IN THE CACHE", desc: "Performance telemetry leaves invisible artifacts stored inside modern browser storage. An encrypted telemetry payload has been cached within the client-side speed insights cache. Intercept and decode the cached metric to extract the master token.", link: "https://mission-indol.vercel.app/" },
+  { id: 9, title: "THE CACHED VEIL", desc: "Before a terminal renders its interface, a silent handshake transpires across the wire. But modern browsers favor convenience over raw truth—serving cached records from local memory and blinding the operator to origin headers. Only an operative with keen observation who forces an uncached transmission directly over the wire will capture what the server whispers.", link: "https://secure-vault-endpoint.vercel.app/" },
+  { id: 10, title: "THE FINAL CIPHER", desc: "Nine fragments. Nine sectors breached. Each character you recovered across your missions forms a single piece of the master key. You have exactly 2 attempts and zero hints to assemble and transmit the 9-letter keyword. No proof image upload is required for this final vault. Converge your intel and unlock the system.", link: "#" },
 ];
 
 export default function DashboardPage() {
@@ -64,6 +63,7 @@ export default function DashboardPage() {
   const [showVictory, setShowVictory] = useState<boolean>(false);
   const [showLevel10Rules, setShowLevel10Rules] = useState<boolean>(false);
   const [acceptedRules, setAcceptedRules] = useState<boolean>(false);
+  const [redirectCountdown, setRedirectCountdown] = useState<number>(5);
 
   const [selectedMission, setSelectedMission] = useState(1);
 
@@ -245,8 +245,18 @@ export default function DashboardPage() {
               setShowLevel10Rules(true);
             }
           } else {
-            // Mission 10 victory!
+            // Mission 10 victory! Auto-redirect to leaderboard after 5 seconds.
             setShowVictory(true);
+            setRedirectCountdown(5);
+            let count = 5;
+            const countInterval = setInterval(() => {
+              count -= 1;
+              setRedirectCountdown(count);
+              if (count <= 0) {
+                clearInterval(countInterval);
+                router.push("/leaderboard");
+              }
+            }, 1000);
           }
 
           fetchDashboardData();
@@ -656,6 +666,17 @@ export default function DashboardPage() {
               </div>
             )}
 
+            {selectedMission === 10 && (
+              <div className="border border-border-g2 bg-bg2 p-4 text-center">
+                <div className="font-orb text-[11px] text-amber font-bold tracking-[2px] mb-1">
+                  NO INTEL HINTS PERMITTED FOR MISSION 10
+                </div>
+                <div className="font-mono text-[10px] text-text2 tracking-[1px]">
+                  Sector 10 is the Final Cipher. Assemble the 9 recovered fragments into the master keyword.
+                </div>
+              </div>
+            )}
+
             {hintWarning && !activeHint && (
               <div className="bg-[#ffaa0010] border border-amber p-4 mt-2">
                 <h4 className="font-orb text-[11px] text-amber font-bold mb-2 tracking-[2px]">WARNING: SCORE PENALTY</h4>
@@ -1053,15 +1074,18 @@ export default function DashboardPage() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 1.0 }}
-                  onClick={() => setShowVictory(false)}
+                  onClick={() => router.push("/leaderboard")}
                   className="relative w-full py-4 bg-neon text-black font-orb text-xs font-bold tracking-[3px] uppercase overflow-hidden group rounded-sm shadow-[0_0_20px_rgba(0,255,136,0.1)] transition-all duration-300 hover:bg-[#00ffaa] hover:shadow-[0_0_35px_rgba(0,255,136,0.4)] hover:scale-[1.01] active:scale-[0.98] cursor-pointer"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
-                    RETURN TO DASHBOARD CONTROL
+                    VIEW LIVE LEADERBOARD
                   </span>
                   {/* Premium shimmer sheen effect */}
                   <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/15 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
                 </motion.button>
+                <p className="text-center font-mono text-[10px] text-text2 tracking-[1.5px] mt-3 animate-pulse">
+                  AUTO-REDIRECTING TO LEADERBOARD IN {redirectCountdown}s...
+                </p>
               </div>
 
             </div>
