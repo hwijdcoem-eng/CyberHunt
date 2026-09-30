@@ -113,7 +113,7 @@ export default function LandingPage() {
             </div>
             <div className="w-px h-10 bg-surface2"></div>
             <div>
-              <div className="text-3xl font-display font-bold text-accent text-glow mb-1">500</div>
+              <div className="text-3xl font-display font-bold text-accent text-glow mb-1">7040</div>
               <div className="text-text3 text-xs tracking-widest">MAX SCORE</div>
             </div>
           </div>

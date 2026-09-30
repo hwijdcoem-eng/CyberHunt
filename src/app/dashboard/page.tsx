@@ -34,7 +34,7 @@ const MISSIONS = [
   { id: 1, title: "The Beginning", desc: "Not every secret is buried in code. Some are left where everyone can look, yet few ever notice. Follow the trail, not the crowd. The fragment waits for the one who observes.", link: "https://www.instagram.com/techalfa_/" },
   { id: 2, title: "First Response", desc: "Before a webpage is displayed, a conversation takes place. Listen to what arrives first. Recover the hidden fragment.", link: "https://secure-vault-endpoint.vercel.app/" },
   { id: 3, title: "Unheard Voices", desc: "The page may appear ordinary. But beneath the surface, something is trying to get your attention. Find the next fragment.", link: "https://cyberhunt-2.vercel.app/" },
-  { id: 4, title: "Beyond the Spotlight", desc: "Not every page exists to attract attention. Some exist because they must. Find the hidden fragment.", link: "https://techalfa-website-ivory.vercel.app/" },
+  { id: 4, title: "Beyond the Spotlight", desc: "Not every page exists to attract attention. Some exist because they must. Find the hidden fragment.", link: "https://hwijdcoemwebsite.vercel.app/" },
   { id: 5, title: "THE GAUNTLET", desc: "Four problems. Four answers. Individually meaningless. Together they reveal the next destination.", link: "/debug_challenge.pdf" },
   { id: 6, title: "Beyond the Code", desc: "Not every secret is committed to the codebase. Some are preserved as achievements. Recover the hidden fragment.", link: "https://github.com/kharbikarsagar17-pixel/testrepo.git" },
   {

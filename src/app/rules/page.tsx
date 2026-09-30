@@ -90,7 +90,7 @@ export default function RulesPage() {
               <span className="text-accent font-bold mt-0.5">05</span>
               <div>
                 <h3 className="text-white font-bold tracking-widest mb-1">Official Communications</h3>
-                <p>Keep the official HWIJDCOEM website handy for potential deep-dives: <Link href="https://techalfa-website-ivory.vercel.app/" target="_blank" className="text-blue hover:text-white transition-colors underline decoration-blue/30 underline-offset-4">techalfa-website-ivory.vercel.app</Link></p>
+                <p>Keep the official HWIJDCOEM website handy for potential deep-dives: <Link href="https://hwijdcoemwebsite.vercel.app/" target="_blank" className="text-blue hover:text-white transition-colors underline decoration-blue/30 underline-offset-4">hwijdcoemwebsite.vercel.app</Link></p>
               </div>
             </div>
           </div>
