@@ -31,7 +31,7 @@ interface DashboardData {
 }
 
 const MISSIONS = [
-  { id: 1, title: "The Beginning", desc: "Not every secret is buried in code. Some are left where everyone can look, yet few ever notice. Follow the trail, not the crowd. The fragment waits for the one who observes.", link: "https://www.instagram.com/techalfa_/" },
+  { id: 1, title: "Source Discovery", desc: "A classified repository holds more than just code. Some secrets are buried within the source files, waiting for the one who inspects deep into the repository. Recover the hidden key.", link: "https://github.com/kharbikarsagar17-pixel/test.git" },
   { id: 2, title: "First Response", desc: "Before a webpage is displayed, a conversation takes place. Listen to what arrives first. Recover the hidden fragment.", link: "https://secure-vault-endpoint.vercel.app/" },
   { id: 3, title: "Unheard Voices", desc: "The page may appear ordinary. But beneath the surface, something is trying to get your attention. Find the next fragment.", link: "https://cyberhunt-2.vercel.app/" },
   { id: 4, title: "Beyond the Spotlight", desc: "Not every page exists to attract attention. Some exist because they must. Find the hidden fragment.", link: "https://hwijdcoemwebsite.vercel.app/" },

@@ -39,8 +39,8 @@ export async function POST(request: NextRequest) {
 
        const HINTS: Record<string, Record<string, string>> = {
         "1": {
-          "1": "A profile is more than its posts. The smallest details often lead to the biggest discoveries.",
-          "2": "The answer isn't hidden in the feed. Look where profiles connect to the outside world."
+          "1": "Explore the repository files. The secret isn't in plain sight on the main page.",
+          "2": "Look closely at the source code comments across the C files."
         },
         "2": {
           "1": "Every request receives a response.",
@@ -148,7 +148,7 @@ export async function POST(request: NextRequest) {
          if (attempts >= 2) {
            return NextResponse.json({ error: "MAXIMUM ATTEMPTS REACHED. MISSION LOCKED." }, { status: 403 });
          }
-         if (answer.toUpperCase().trim() !== "WIRESHARK") {
+         if (answer.toUpperCase().trim() !== "ARCHLINUX") {
            await supabase.from("teams").update({ level10_attempts: attempts + 1 }).eq("team_id", user.team_id);
            const remaining = 2 - (attempts + 1);
            console.warn(`[submit] wrong level-10 answer team_id=${user.team_id} attempts=${attempts + 1}`);
@@ -195,7 +195,8 @@ export async function POST(request: NextRequest) {
         for (const s of subs) {
           const idx = s.level_id - 1;
           if (idx >= 0 && idx < 9) {
-            fragments[idx] = s.answer.substring(0, 1).toUpperCase();
+            const ARCH_FRAGS = ["A", "R", "C", "H", "L", "I", "N", "U", "X"];
+            fragments[idx] = ARCH_FRAGS[idx];
           }
         }
       }
