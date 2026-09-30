@@ -20,7 +20,7 @@ async function syncUsers() {
     process.exit(1);
   }
 
-  const raw = fs.readFileSync(usersPath, 'utf8');
+  const raw = fs.readFileSync(usersPath, 'utf8').replace(/^\uFEFF/, '');
   const users = JSON.parse(raw);
   console.log(`Loaded ${users.length} users from users.json`);
 

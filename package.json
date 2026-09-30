@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "sync-users": "node scripts/sync-users-to-db.js"
+    "sync-users": "node scripts/sync-users-to-db.js",
+    "stress-test": "node scripts/stress-test-100.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.108.2",
